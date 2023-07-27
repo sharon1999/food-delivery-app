@@ -1,0 +1,31 @@
+.res-img {
+    width: 200px;
+  }
+  .card-title {
+    font-size: 17px;
+    font-weight: 500;
+    word-break: break-word;
+    font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
+  }
+  .card-subtitle {
+    color: #686b78;
+    font-size: 13px;
+    margin-top: 4px;
+    font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
+  }
+  
+  .res-card {
+    margin: 30px;
+    padding: 20px;
+    width: 200px;
+    cursor: pointer;
+  }
+  .res-card:hover {
+    border-color: #d3d5df;
+    box-shadow: 0 4px 7px 0 rgba(108, 108, 109, 0.6);
+  }
+  .res-card-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+  }

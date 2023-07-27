@@ -1,0 +1,31 @@
+
+.shimmer-ui{
+    margin: 30px;
+    padding: 20px;
+    width: 170px;
+    height:150px;
+    /* background-color: #f0f0f0; */
+    position: relative;
+  }
+  .shimmer-content1{
+    position: absolute;
+    top: 20px;
+    height: 100px;
+    width: 250px;
+    background-color: #e6e5e5;
+  }
+  .shimmer-content2{
+    position: absolute;
+    top: 130px;
+    height: 20px;
+    width: 90px;
+    background-color: #e6e5e5;
+  }
+  .shimmer-content3{
+    position: absolute;
+    bottom: 10px;
+    height: 20px;
+    width: 140px;
+    background-color: #e6e5e5;
+  }
+  
