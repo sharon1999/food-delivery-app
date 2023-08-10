@@ -13,7 +13,7 @@ const ResFilter = ({ restaurants,  setFilteredRestaurants }) => {
   };
   return (
     <div className="filter-header ">
-      <div>{restaurants.length} Restaurants</div>
+      <div>{restaurants?.length} Restaurants</div>
       <button className="btn-filter" onClick={handleFilter}>
         Top Rated
       </button>

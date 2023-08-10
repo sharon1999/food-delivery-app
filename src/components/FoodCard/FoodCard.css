@@ -1,0 +1,24 @@
+.food-details{
+    margin : 0 5%;
+    padding: 3% 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+}
+h3{
+    font-size: 1.22rem;
+    font-weight: 500;
+    color: #3e4152;
+    word-break: break-word;
+}
+img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.food-desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}

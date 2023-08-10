@@ -1,9 +1,9 @@
 import React from "react";
-import { IMG_URL } from "../../config/constants";
+import { IMG_URL } from "../../utils/constants";
 import './ResCard.css'
 
 export const ResCard = (props) => {
-  const restaurant = props.restaurant.data;
+  const restaurant = props.restaurant;
   return (
       <div className="res-card">
         <img

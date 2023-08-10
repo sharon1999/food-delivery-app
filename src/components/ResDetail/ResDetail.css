@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    color: #000;
+}
+.shimmerui{
+    margin-top: 5%;
+}
+.details-container{
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin: 0 10%;
+}
+.details-header{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #888;
+}
+.details-price{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #888;
+}
+.res-eta{
+    display: flex;
+    gap: 2rem;
+}
+.res-price{
+    display: flex;
+    gap: 0.5rem;
+}
+.res-time{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 6rem;
+}
+.res-avgtime{
+    font-size: 16px;
+    font-weight: 700;
+}
