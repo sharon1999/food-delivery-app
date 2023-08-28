@@ -1,6 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+  :root {
+    --white: #efece6;
+    --orange: #feb33a;
+    --black: #080000;
+    --red: #e72452;
+  }
+}
+
+/* :root {
+  --white: #efece6;
+  --orange: #feb33a;
+  --black: #080000;
+  --red: #e72452;
+} */
+
 
 @import url('https://fonts.googleapis.com/css2?family=Neucha&family=Poppins:ital,wght@0,200;0,500;1,200;1,500&display=swap');
 * {

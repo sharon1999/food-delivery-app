@@ -7,7 +7,7 @@ const Error = () => {
   console.log(error);
   return (
     <div id="main">
-      <div class="fof">
+      <div className="fof">
         <h1>{error.status} : {error.statusText}</h1>
         <p>{error.data}</p>
       </div>
