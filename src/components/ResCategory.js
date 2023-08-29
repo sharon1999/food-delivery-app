@@ -15,7 +15,10 @@ const ResCategory = ({ food, viewAccordion, setShowIndex }) => {
         <h3>
           {food.card.card.title}({food.card.card?.itemCards?.length})
         </h3>
-        <span className="material-symbols-outlined text-3xl">expand_more</span>
+        
+        <span className="material-symbols-outlined text-3xl">
+            {viewAccordion ?"expand_less":"expand_more"}   
+        </span>
       </div>
       {viewAccordion && (
         <div>

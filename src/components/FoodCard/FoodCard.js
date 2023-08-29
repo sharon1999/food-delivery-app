@@ -15,15 +15,15 @@ const FoodCard = ({ foods }) => {
         </div>
         <div className="w-1/12">
           <div className="absolute">
-            <button className="bg-slate-50 text-green-500 shadow-lg rounded-lg p-1 mx-8 my-2">
-              ADD +
+            <button className="bg-slate-50 text-green-500 shadow-md hover:shadow-xl rounded-lg p-3 w-28 text-sm">
+              ADD
             </button>
           </div>
-          <img
+          {/* <img
             src={IMG_URL + food.card.info.imageId}
             alt={food.card.info.name}
             className="w-32 h-auto"
-          />
+          /> */}
         </div>
       </div>
     );
