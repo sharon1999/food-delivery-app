@@ -9,7 +9,6 @@ const ResDetail = () => {
   const [showIndex, setShowIndex] = useState(0);
   const { id } = useParams();
   const { resInfo, foodInfo } = useRestaurantMenu(id);
-  // console.log(foodInfo);
   if (resInfo === null)
     return (
       <div className="shimmerui">
@@ -31,6 +30,7 @@ const ResDetail = () => {
       "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
   });
+  // console.log("Categories", categories);
 
   return (
     <div className="details-container w-3/4 m-auto">
@@ -101,7 +101,7 @@ const ResDetail = () => {
         {categories.map((food, index) => {
           return (
             <ResCategory
-              food={food}
+              food={food?.card}
               key={food?.card?.card?.title}
               viewAccordion={showIndex === index ? true : false}
               setShowIndex={() =>

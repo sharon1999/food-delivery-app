@@ -5,6 +5,7 @@ const ResCategory = ({ food, viewAccordion, setShowIndex }) => {
   const handleAccordion = () => {
     setShowIndex();
   };
+  console.log("Foodd",food);
   return (
     <>
       <div
@@ -12,7 +13,7 @@ const ResCategory = ({ food, viewAccordion, setShowIndex }) => {
         onClick={handleAccordion}
       >
         <h3>
-          {food?.card?.card?.title}({food?.card?.card?.itemCards?.length})
+          {food?.card?.title}({food?.card?.itemCards?.length})
         </h3>
 
         <span className="material-symbols-outlined text-3xl">
@@ -21,7 +22,7 @@ const ResCategory = ({ food, viewAccordion, setShowIndex }) => {
       </div>
       {viewAccordion && (
         <div>
-          <FoodCard foods={food} key={food?.card?.card?.title} />
+          <FoodCard foods={food} key={food?.card?.title} />
         </div>
       )}
     </>

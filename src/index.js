@@ -8,12 +8,19 @@ import Error from "./components/Error/Error";
 import ResDetail from "./components/ResDetail/ResDetail";
 import Header from "./components/Header/Header";
 import AboutClass from "./components/About/AboutClass";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 
 const AppLayout = () => {
-  return( <div className="App">
-    <Header />
-    <Outlet />
-  </div>)
+  return (
+    <Provider store={appStore}>
+      <div className="App">
+        <Header />
+        <Outlet />
+      </div>
+    </Provider>
+  );
 };
 
 const appRouter = createBrowserRouter([
@@ -28,11 +35,15 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <AboutClass name ="Namaste React"/>,
+        element: <AboutClass name="Namaste React" />,
       },
       {
         path: "/res/:id",
         element: <ResDetail />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },

@@ -1,11 +1,17 @@
 import React from "react";
 import "./FoodCard.css";
 import { IMG_URL } from "../../utils/constants";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../utils/cartSlice";
 
 const FoodCard = ({ foods }) => {
-  // console.log(foods);
+  //Dispatch an action onClick
+  const dispatch = useDispatch();
+  const handleClick = (food) => {
+    dispatch(addItem(food))
+  };
 
-  return foods?.card?.card?.itemCards?.map((food,index) => {
+  return foods?.card?.itemCards?.map((food, index) => {
     return (
       <div className="food-details" key={index}>
         <div className="food-desc w-11/12">
@@ -15,10 +21,13 @@ const FoodCard = ({ foods }) => {
         </div>
         <div className="w-2/12  relative">
           {/* <div className=""> */}
-            <button className="bg-white hover:bg-slate-50 text-green-500 shadow-md hover:shadow-xl  rounded-lg  p-1
-            w-1/2 text-md absolute top-1/2 left-1/2 -translate-x-1/2">
-              ADD
-            </button>
+          <button
+            className="bg-white hover:bg-slate-50 text-green-500 shadow-md hover:shadow-xl  rounded-lg  p-1
+            w-1/2 text-md absolute top-1/2 left-1/2 -translate-x-1/2"
+            onClick={()=>handleClick(food)}
+          >
+            ADD
+          </button>
           {/* </div> */}
           <img
             src={IMG_URL + food.card.info.imageId}

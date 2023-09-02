@@ -50,11 +50,13 @@ const Header = () => {
         </div>
 
         <div className="icon flex flex-col items-center cursor-pointer relative">
-          <span className="material-symbols-outlined">
-            shopping_cart 
+          <Link to="/cart">
+            <span className="material-symbols-outlined">shopping_cart</span>
+            <div>Cart</div>
+          </Link>
+          <span className="absolute -top-4 -right-1 bg-black text-white rounded-lg text-xs p-0.5">
+            {cart.length}
           </span>
-          <div>Cart</div>
-          <span className="absolute -top-4 -right-1 bg-black text-white rounded-lg text-xs p-0.5">{cart.length}</span>
         </div>
         <div className="icon flex flex-col items-center cursor-pointer">
           <span className="material-symbols-outlined font-extrabold">
