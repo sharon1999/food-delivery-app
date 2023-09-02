@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import FoodCard from "./FoodCard/FoodCard";
-import { IMG_URL } from "../utils/constants";
 
 const ResCategory = ({ food, viewAccordion, setShowIndex }) => {
   const handleAccordion = () => {
@@ -13,17 +12,16 @@ const ResCategory = ({ food, viewAccordion, setShowIndex }) => {
         onClick={handleAccordion}
       >
         <h3>
-          {food.card.card.title}({food.card.card?.itemCards?.length})
+          {food?.card?.card?.title}({food?.card?.card?.itemCards?.length})
         </h3>
-        
+
         <span className="material-symbols-outlined text-3xl">
-            {viewAccordion ?"expand_less":"expand_more"}   
+          {viewAccordion ? "expand_less" : "expand_more"}
         </span>
       </div>
       {viewAccordion && (
         <div>
-          {/* {food?.card?.card?.itemCards?.map((food,index) => { */}
-          <FoodCard foods={food} key={food?.card?.card?.title} />;{/* })} */}
+          <FoodCard foods={food} key={food?.card?.card?.title} />
         </div>
       )}
     </>

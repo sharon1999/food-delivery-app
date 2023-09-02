@@ -19,10 +19,10 @@ const WhatsOnYourMind = ({ whatsOnYourMind }) => {
     </div>
   );
   return (
-    <div className="flex-col overflow-hidden">
+    <div className="flex-col overflow-hidden w-8/12 mx-[10%]">
       {/* Top section */}
       <div className="flex justify-between">
-        <h5 className="text-3xl font-bold text-gray-600 pt-3 md:ml-28 ">What's on your mind?</h5>
+        <h5 className="text-3xl font-bold text-gray-600 pt-3">What's on your mind?</h5>
         <div className="flex items-center gap-5 mr-5">
           <div
             className={

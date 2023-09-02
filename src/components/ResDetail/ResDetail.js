@@ -9,7 +9,7 @@ const ResDetail = () => {
   const [showIndex, setShowIndex] = useState(0);
   const { id } = useParams();
   const { resInfo, foodInfo } = useRestaurantMenu(id);
-  console.log(foodInfo);
+  // console.log(foodInfo);
   if (resInfo === null)
     return (
       <div className="shimmerui">

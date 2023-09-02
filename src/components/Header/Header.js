@@ -1,6 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 const Header = () => {
+  //Subscribing to the store using a selector
+  const cart = useSelector((store) => store.cart.items);
+  console.log(cart);
   return (
     <div className="flex bg-b justify-between items-center mt-0 mb-4 p-2 shadow-md shadow-slate-200">
       <div className="left-nav">
@@ -38,17 +42,24 @@ const Header = () => {
       </div>
 
       <div className="flex gap-10 mr-5">
-        <div className="icon flex flex-col items-center">
-          <span className="material-symbols-outlined font-extrabold">search</span>
+        <div className="icon flex flex-col items-center cursor-pointer">
+          <span className="material-symbols-outlined font-extrabold">
+            search
+          </span>
           <div>Search</div>
         </div>
 
-        <div className="icon flex flex-col items-center">
-          <span className="material-symbols-outlined font-extrabold">support</span>
-          <div>Help</div>
+        <div className="icon flex flex-col items-center cursor-pointer relative">
+          <span className="material-symbols-outlined">
+            shopping_cart 
+          </span>
+          <div>Cart</div>
+          <span className="absolute -top-4 -right-1 bg-black text-white rounded-lg text-xs p-0.5">{cart.length}</span>
         </div>
-        <div className="icon flex flex-col items-center">
-          <span className="material-symbols-outlined font-extrabold">person</span>
+        <div className="icon flex flex-col items-center cursor-pointer">
+          <span className="material-symbols-outlined font-extrabold">
+            person
+          </span>
           <div> Sign In</div>
         </div>
       </div>

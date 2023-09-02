@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ResFilter from "./components/ResFilter/ResFilter";
 import ShimmerUI from "./components/ShimmerUI/ShimmerUI";
 import ResCard from "./components/ResCard/ResCard";
 import ResDetail from "./components/ResDetail/ResDetail";
@@ -9,7 +8,6 @@ import "./index.css";
 import useOnlineStatus from "./utils/useOnlineStatus";
 import OnlineStatus from "./components/OnlineStatus/OnlineStatus";
 import WhatsOnYourMind from "./components/WhatsOnYourMind/WhatsOnYourMind";
-
 function App() {
   const [restaurants, setRestaurants] = useState([]);
   const [whatsOnYourMind, setWhatsOnYourMind] = useState([]);
@@ -26,37 +24,37 @@ function App() {
       response?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
-    console.log("Res", restaurants);
+    // console.log("Res", restaurants);
 
     setWhatsOnYourMind(
       response?.data?.cards[1]?.card?.card?.imageGridCards?.info
     );
 
     setErrorData(response?.data?.cards[0]?.card?.card);
-    console.log("Err", errorData);
+    // console.log("Err", errorData);
   };
   if (!isOnline) return <OnlineStatus />;
   return (
-    <div className="App">
-      {/* Len{restaurants?.length} */}
-      <WhatsOnYourMind whatsOnYourMind={whatsOnYourMind} />
-      {/* <ResFilter
+      <div className="App">
+        {/* Len{restaurants?.length} */}
+        <WhatsOnYourMind whatsOnYourMind={whatsOnYourMind} />
+        {/* <ResFilter
         restaurants={restaurants}
         setFilteredRestaurants={setFilteredRestaurants}
       /> */}
-      {restaurants?.length == 0 && <ShimmerUI />}
-      <div className="res-container">
-        {restaurants?.map((restaurant) => (
-          <Link
-            to={"res/" + restaurant.info.id}
-            key={restaurant.info.id}
-            element={<ResDetail />}
-          >
-            <ResCard restaurant={restaurant.info} />
-          </Link>
-        ))}
+        {restaurants?.length === 0 && <ShimmerUI />}
+        <div className="res-container">
+          {restaurants?.map((restaurant) => (
+            <Link
+              to={"res/" + restaurant.info.id}
+              key={restaurant.info.id}
+              element={<ResDetail />}
+            >
+              <ResCard restaurant={restaurant.info} />
+            </Link>
+          ))}
+        </div>
       </div>
-    </div>
   );
 }
 export default App;

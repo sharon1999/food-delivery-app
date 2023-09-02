@@ -4,7 +4,7 @@ import "./Error.css";
 
 const Error = () => {
   const error = useRouteError();
-  console.log(error);
+  // console.log(error);
   return (
     <div id="main">
       <div className="fof">

@@ -8,7 +8,7 @@ class AboutClass extends Component {
     console.log("Component Did Mount");
   }
   componentDidMount() {
-    console.log("Component Did Mount");
+    // console.log("Component Did Mount");
   }
   render() {
     return <div>About{this.props.name}</div>;

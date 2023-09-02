@@ -3,7 +3,7 @@ import "./FoodCard.css";
 import { IMG_URL } from "../../utils/constants";
 
 const FoodCard = ({ foods }) => {
-  console.log(foods);
+  // console.log(foods);
 
   return foods?.card?.card?.itemCards?.map((food,index) => {
     return (
@@ -13,17 +13,18 @@ const FoodCard = ({ foods }) => {
           <p>₹ {food.card.info.price / 100}</p>
           <p>{food.card.info.description}</p>
         </div>
-        <div className="w-1/12">
-          <div className="absolute">
-            <button className="bg-slate-50 text-green-500 shadow-md hover:shadow-xl rounded-lg p-3 w-28 text-sm">
+        <div className="w-2/12  relative">
+          {/* <div className=""> */}
+            <button className="bg-white hover:bg-slate-50 text-green-500 shadow-md hover:shadow-xl  rounded-lg  p-1
+            w-1/2 text-md absolute top-1/2 left-1/2 -translate-x-1/2">
               ADD
             </button>
-          </div>
-          {/* <img
+          {/* </div> */}
+          <img
             src={IMG_URL + food.card.info.imageId}
             alt={food.card.info.name}
-            className="w-32 h-auto"
-          /> */}
+            className="w-full h-auto"
+          />
         </div>
       </div>
     );
