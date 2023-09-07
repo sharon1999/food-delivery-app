@@ -3,11 +3,11 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
-import About from "./components/About/About";
-import Error from "./components/Error/Error";
-import ResDetail from "./components/ResDetail/ResDetail";
-import Header from "./components/Header/Header";
-import AboutClass from "./components/About/AboutClass";
+import About from "./components/About";
+import Error from "./components/Error";
+import ResDetail from "./components/ResDetail";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
@@ -18,6 +18,7 @@ const AppLayout = () => {
       <div className="App">
         <Header />
         <Outlet />
+        <Footer />
       </div>
     </Provider>
   );
@@ -27,15 +28,15 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
+    errorElement: <Error />,
     children: [
       {
         path: "/",
         element: <App />,
-        errorElement: <Error />,
       },
       {
         path: "/about",
-        element: <AboutClass name="Namaste React" />,
+        element: <About name="Namaste React" />,
       },
       {
         path: "/res/:id",

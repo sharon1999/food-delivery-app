@@ -1,11 +1,10 @@
 import React from "react";
-import FoodCard from "./FoodCard/FoodCard";
+import FoodCard from "./FoodCard";
 
 const ResCategory = ({ food, viewAccordion, setShowIndex }) => {
   const handleAccordion = () => {
     setShowIndex();
   };
-  console.log("Foodd",food);
   return (
     <>
       <div

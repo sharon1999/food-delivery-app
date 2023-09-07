@@ -1,8 +1,8 @@
-import ShimmerUI from "../ShimmerUI/ShimmerUI";
+import ShimmerUI from "./ShimmerUI/ShimmerUI";
 // import "./ResDetail.css";
 import { useParams } from "react-router-dom";
-import useRestaurantMenu from "../../utils/useRestaurantMenu";
-import ResCategory from "../ResCategory";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
+import ResCategory from "./ResCategory";
 import { useState } from "react";
 
 const ResDetail = () => {

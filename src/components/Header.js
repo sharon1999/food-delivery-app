@@ -6,7 +6,7 @@ const Header = () => {
   const cart = useSelector((store) => store.cart.items);
   console.log(cart);
   return (
-    <div className="flex bg-b justify-between items-center mt-0 mb-4 p-2 shadow-md shadow-slate-200">
+    <div className="flex bg-b justify-between items-center my-6 p-2 shadow-md shadow-slate-200">
       <div className="left-nav">
         <Link to="/">
           <svg
@@ -40,30 +40,25 @@ const Header = () => {
           </svg>
         </Link>
       </div>
+      <div className="flex gap-10 mr-10">
+        <Link
+          to="/about"
+          className="icon flex flex-col items-center justify-center cursor-pointer"
+        >
+          <span className="material-symbols-outlined bg-pink-700 rounded-full text-white p-2">info_i</span>
+          <div>About</div>
+        </Link>
 
-      <div className="flex gap-10 mr-5">
-        <div className="icon flex flex-col items-center cursor-pointer">
-          <span className="material-symbols-outlined font-extrabold">
-            search
-          </span>
-          <div>Search</div>
-        </div>
-
-        <div className="icon flex flex-col items-center cursor-pointer relative">
-          <Link to="/cart">
-            <span className="material-symbols-outlined">shopping_cart</span>
-            <div>Cart</div>
-          </Link>
-          <span className="absolute -top-4 -right-1 bg-black text-white rounded-lg text-xs p-0.5">
-            {cart.length}
-          </span>
-        </div>
-        <div className="icon flex flex-col items-center cursor-pointer">
-          <span className="material-symbols-outlined font-extrabold">
-            person
-          </span>
-          <div> Sign In</div>
-        </div>
+        <Link
+          to="/cart"
+          className="icon flex flex-col items-center justify-center cursor-pointer relative"
+        >
+          <span className="material-symbols-outlined  bg-pink-700 rounded-full text-white p-2">shopping_cart</span>
+          <div>Cart</div>
+        <span className="absolute -top-4 -right-1 bg-black text-white rounded-lg text-xs p-0.5">
+          {cart.length}
+        </span>
+        </Link>
       </div>
     </div>
   );

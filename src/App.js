@@ -1,17 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ShimmerUI from "./components/ShimmerUI/ShimmerUI";
-import ResCard from "./components/ResCard/ResCard";
-import ResDetail from "./components/ResDetail/ResDetail";
+import ResCard from "./components/ResCard";
+import ResDetail from "./components/ResDetail";
 import { API_URL } from "./utils/constants";
 import "./index.css";
 import useOnlineStatus from "./utils/useOnlineStatus";
-import OnlineStatus from "./components/OnlineStatus/OnlineStatus";
-import WhatsOnYourMind from "./components/WhatsOnYourMind/WhatsOnYourMind";
+import OnlineStatus from "./components/OnlineStatus";
+import WhatsOnYourMind from "./components/WhatsOnYourMind";
 function App() {
   const [restaurants, setRestaurants] = useState([]);
   const [whatsOnYourMind, setWhatsOnYourMind] = useState([]);
-  const [errorData, setErrorData] = useState([]);
   const { isOnline } = useOnlineStatus();
 
   useEffect(() => {
@@ -30,18 +29,14 @@ function App() {
       response?.data?.cards[1]?.card?.card?.imageGridCards?.info
     );
 
-    setErrorData(response?.data?.cards[0]?.card?.card);
-    // console.log("Err", errorData);
+  
   };
   if (!isOnline) return <OnlineStatus />;
   return (
       <div className="App">
         {/* Len{restaurants?.length} */}
         <WhatsOnYourMind whatsOnYourMind={whatsOnYourMind} />
-        {/* <ResFilter
-        restaurants={restaurants}
-        setFilteredRestaurants={setFilteredRestaurants}
-      /> */}
+        
         {restaurants?.length === 0 && <ShimmerUI />}
         <div className="res-container">
           {restaurants?.map((restaurant) => (

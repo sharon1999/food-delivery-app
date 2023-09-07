@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { IMG_URL } from "../../utils/constants";
-import ShimmerUI from "../ShimmerUI/ShimmerUI";
+import { IMG_URL } from "../utils/constants";
+import ShimmerUI from "./ShimmerUI/ShimmerUI";
 const WhatsOnYourMind = ({ whatsOnYourMind }) => {
   // console.log("Val",whatsOnYourMind);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -78,14 +78,14 @@ const WhatsOnYourMind = ({ whatsOnYourMind }) => {
         </div>
       </div>
       {/* Bottom Section */}
-      <div className="flex flex-col font-semibold mx-32">
+      <div className="flex flex-col font-semibold mr-32">
         <div className="flex mt-10">
           {whatsOnYourMind?.map((ele) => {
             return (
               <img
                 key={ele.imageId}
                 src={`${IMG_URL}${ele.imageId}`}
-                className="w-40 h-40 carousel-img transition linear duration-500 md:mx-[5vh] sm:mx-[20vh]"
+                className="w-30 h-40 transition linear duration-500 md:mx-[5vh] sm:mx-[20vh]"
                 style={{ transform: `translate(-${activeIndex * 100}%)` }}
               />
             );
