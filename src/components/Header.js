@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   //Subscribing to the store using a selector
   const cart = useSelector((store) => store.cart.items);
-  console.log(cart);
+  // console.log(cart);
   return (
     <div className="flex bg-b justify-between items-center my-6 p-2 shadow-md shadow-slate-200">
       <div className="left-nav">

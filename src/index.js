@@ -14,7 +14,7 @@ import Cart from "./components/Cart";
 
 const AppLayout = () => {
   return (
-    <Provider store={appStore}>
+    <Provider  store={appStore}>
       <div className="App">
         <Header />
         <Outlet />

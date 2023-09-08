@@ -6,7 +6,7 @@ import EmptyCart from "./EmptyCart";
 
 const Cart = () => {
   const cart = useSelector((store) => store.cart.items);
-  console.log("Cart", cart.length);
+  // console.log("Cart", cart.length);
   const dispatch = useDispatch();
   const handleClick = (food) => {
     dispatch(clearCart());
