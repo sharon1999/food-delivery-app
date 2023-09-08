@@ -17,7 +17,6 @@ const FoodItem = ({ food, index }) => {
   const dispatch = useDispatch();
   const cart = useSelector((store) => store.cart);
   const foodItem = cart.items.find((element) => element.id === food.id);
-  console.log(cart);
 
   return (
     <div
