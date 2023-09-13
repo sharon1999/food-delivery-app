@@ -42,14 +42,6 @@ const Header = () => {
       </div>
       <div className="flex gap-10 mr-10">
         <Link
-          to="/about"
-          className="icon flex flex-col items-center justify-center cursor-pointer"
-        >
-          <span className="material-symbols-outlined bg-pink-700 rounded-full text-white p-2">info_i</span>
-          <div>About</div>
-        </Link>
-
-        <Link
           to="/cart"
           className="icon flex flex-col items-center justify-center cursor-pointer relative"
         >
