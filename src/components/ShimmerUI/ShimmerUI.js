@@ -1,135 +1,16 @@
 import React from "react";
-import "./ShimmerUI.css";
 function ShimmerUI() {
-  return (
-    <div className="res-container">
-      <div className="shimmer-ui">
-        <div className="shimmer-content1"></div>
-        <div className="shimmer-content2"></div>
-        <div className="shimmer-content3"></div>
+  return [...Array(20)].map((ele, index) => {
+    return (
+      <div
+        key={index}
+        className="shimmer-ui animate-pulse w-64 h-48 bg-slate-200"
+      >
+        <div className="bg-slate-300 w-1/2 m-auto h-1/2 mt-[10%]"></div>
+        <div className="bg-slate-400 w-1/3 ml-[25%] h-5 mt-2"></div>
       </div>
-      <div className="shimmer-ui">
-        <div className="shimmer-content1"></div>
-        <div className="shimmer-content2"></div>
-        <div className="shimmer-content3"></div>
-      </div>
-      <div className="shimmer-ui">
-        <div className="shimmer-content1"></div>
-        <div className="shimmer-content2"></div>
-        <div className="shimmer-content3"></div>
-      </div>
-      <div className="shimmer-ui">
-        <div className="shimmer-content1"></div>
-        <div className="shimmer-content2"></div>
-        <div className="shimmer-content3"></div>
-      </div>
-      <div className="shimmer-ui">
-        <div className="shimmer-content1"></div>
-        <div className="shimmer-content2"></div>
-        <div className="shimmer-content3"></div>
-      </div>
-      <div className="shimmer-ui">
-        <div className="shimmer-content1"></div>
-        <div className="shimmer-content2"></div>
-        <div className="shimmer-content3"></div>
-      </div>
-      <div className="shimmer-ui">
-        <div className="shimmer-content1"></div>
-        <div className="shimmer-content2"></div>
-        <div className="shimmer-content3"></div>
-      </div>
-      <div className="shimmer-ui">
-        <div className="shimmer-content1"></div>
-        <div className="shimmer-content2"></div>
-        <div className="shimmer-content3"></div>
-      </div>
-      <div className="shimmer-ui">
-        <div className="shimmer-content1"></div>
-        <div className="shimmer-content2"></div>
-        <div className="shimmer-content3"></div>
-      </div>
-      <div className="shimmer-ui">
-        <div className="shimmer-content1"></div>
-        <div className="shimmer-content2"></div>
-        <div className="shimmer-content3"></div>
-      </div>
-      <div className="shimmer-ui">
-        <div className="shimmer-content1"></div>
-        <div className="shimmer-content2"></div>
-        <div className="shimmer-content3"></div>
-      </div>
-      <div className="shimmer-ui">
-        <div className="shimmer-content1"></div>
-        <div className="shimmer-content2"></div>
-        <div className="shimmer-content3"></div>
-      </div>
-      <div className="shimmer-ui">
-        <div className="shimmer-content1"></div>
-        <div className="shimmer-content2"></div>
-        <div className="shimmer-content3"></div>
-      </div>
-      <div className="shimmer-ui">
-        <div className="shimmer-content1"></div>
-        <div className="shimmer-content2"></div>
-        <div className="shimmer-content3"></div>
-      </div>
-      <div className="shimmer-ui">
-        <div className="shimmer-content1"></div>
-        <div className="shimmer-content2"></div>
-        <div className="shimmer-content3"></div>
-      </div>
-      <div className="shimmer-ui">
-        <div className="shimmer-content1"></div>
-        <div className="shimmer-content2"></div>
-        <div className="shimmer-content3"></div>
-      </div>
-      <div className="shimmer-ui">
-        <div className="shimmer-content1"></div>
-        <div className="shimmer-content2"></div>
-        <div className="shimmer-content3"></div>
-      </div>
-      <div className="shimmer-ui">
-        <div className="shimmer-content1"></div>
-        <div className="shimmer-content2"></div>
-        <div className="shimmer-content3"></div>
-      </div>
-      <div className="shimmer-ui">
-        <div className="shimmer-content1"></div>
-        <div className="shimmer-content2"></div>
-        <div className="shimmer-content3"></div>
-      </div>
-      <div className="shimmer-ui">
-        <div className="shimmer-content1"></div>
-        <div className="shimmer-content2"></div>
-        <div className="shimmer-content3"></div>
-      </div>
-      <div className="shimmer-ui">
-        <div className="shimmer-content1"></div>
-        <div className="shimmer-content2"></div>
-        <div className="shimmer-content3"></div>
-      </div>
-      <div className="shimmer-ui">
-        <div className="shimmer-content1"></div>
-        <div className="shimmer-content2"></div>
-        <div className="shimmer-content3"></div>
-      </div>
-      <div className="shimmer-ui">
-        <div className="shimmer-content1"></div>
-        <div className="shimmer-content2"></div>
-        <div className="shimmer-content3"></div>
-      </div>
-      <div className="shimmer-ui">
-        <div className="shimmer-content1"></div>
-        <div className="shimmer-content2"></div>
-        <div className="shimmer-content3"></div>
-      </div>
-      <div className="shimmer-ui">
-        <div className="shimmer-content1"></div>
-        <div className="shimmer-content2"></div>
-        <div className="shimmer-content3"></div>
-      </div>
-    </div>
-  );
+    );
+  });
 }
 
 export default ShimmerUI;

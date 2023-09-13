@@ -38,40 +38,45 @@ function App() {
   if (!isOnline) return <OnlineStatus />;
   return (
     <div className="App ">
-      {(!restaurants || restaurants?.length === 0) && <ShimmerUI />}
-      <div className="w-8/12 m-auto">
-        <ResFilter
-          restaurants={restaurants}
-          setFilteredRestaurants={setFilteredRestaurants}
-          searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
-        />
-        <WhatsOnYourMind whatsOnYourMind={whatsOnYourMind} />
-
-        <h5 className="text-3xl font-bold text-gray-600 pt-3">
-          Top restaurant chains in Thiruvananthapuram
-        </h5>
-        {filteredRestaurants?.length === 0 && (
-          <div className="flex justify-center items-center">
-            <h3> No match found for "{searchTerm}"</h3>
-            <img 
-            src="https://img.freepik.com/premium-vector/file-found-illustration-with-confused-people-holding-big-magnifier-search-no-result_258153-336.jpg" 
-            height="100px"
-            />
-          </div>
-        )}
-        <div className="flex flex-wrap">
-          {filteredRestaurants?.map((restaurant) => (
-            <Link
-              to={"res/" + restaurant.info.id}
-              key={restaurant.info.id}
-              element={<ResDetail />}
-            >
-              <ResCard restaurant={restaurant.info} />
-            </Link>
-          ))}
+      {!filteredRestaurants || filteredRestaurants?.length === 0 ? (
+        <div className="flex flex-wrap gap-5 mx-[10%]">
+          <ShimmerUI />
         </div>
-      </div>
+      ) : (
+        <div className="w-8/12 m-auto">
+          <ResFilter
+            restaurants={restaurants}
+            setFilteredRestaurants={setFilteredRestaurants}
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+          />
+          <WhatsOnYourMind whatsOnYourMind={whatsOnYourMind} />
+
+          <h5 className="text-3xl font-bold text-gray-600 pt-3">
+            Top restaurant chains in Thiruvananthapuram
+          </h5>
+          {filteredRestaurants?.length === 0 && (
+            <div className="flex justify-center items-center">
+              <h3> No match found for "{searchTerm}"</h3>
+              <img
+                src="https://img.freepik.com/premium-vector/file-found-illustration-with-confused-people-holding-big-magnifier-search-no-result_258153-336.jpg"
+                height="100px"
+              />
+            </div>
+          )}
+          <div className="flex flex-wrap">
+            {filteredRestaurants?.map((restaurant) => (
+              <Link
+                to={"res/" + restaurant.info.id}
+                key={restaurant.info.id}
+                element={<ResDetail />}
+              >
+                <ResCard restaurant={restaurant.info} />
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
