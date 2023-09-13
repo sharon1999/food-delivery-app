@@ -60,6 +60,7 @@ function App() {
               <img
                 src="https://img.freepik.com/premium-vector/file-found-illustration-with-confused-people-holding-big-magnifier-search-no-result_258153-336.jpg"
                 height="100px"
+                alt="No match found"
               />
             </div>
           )}
