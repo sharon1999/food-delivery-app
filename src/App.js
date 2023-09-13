@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ShimmerUI from "./components/ShimmerUI/ShimmerUI";
+import ShimmerUI from "./components/ShimmerUI";
 import ResCard from "./components/ResCard";
 import ResDetail from "./components/ResDetail";
 import { API_URL } from "./utils/constants";
@@ -34,11 +34,10 @@ function App() {
       response?.data?.cards[1]?.card?.card?.imageGridCards?.info
     );
   };
-
   if (!isOnline) return <OnlineStatus />;
   return (
     <div className="App ">
-      {!filteredRestaurants || filteredRestaurants?.length === 0 ? (
+      {!restaurants || restaurants?.length === 0 ? (
         <div className="flex flex-wrap gap-5 mx-[10%]">
           <ShimmerUI />
         </div>

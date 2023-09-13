@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IMG_URL } from "../utils/constants";
-import ShimmerUI from "./ShimmerUI/ShimmerUI";
+import ShimmerUI from "./ShimmerUI";
 const WhatsOnYourMind = ({ whatsOnYourMind }) => {
   // console.log("Val",whatsOnYourMind);
   const [activeIndex, setActiveIndex] = useState(0);

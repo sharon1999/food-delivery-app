@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 
-const ResFilter = ({ restaurants, setFilteredRestaurants,searchTerm,setSearchTerm }) => {
+const ResFilter = ({
+  restaurants,
+  setFilteredRestaurants,
+  searchTerm,
+  setSearchTerm,
+}) => {
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
     const filteredList = restaurants.filter((res) =>
@@ -8,8 +13,43 @@ const ResFilter = ({ restaurants, setFilteredRestaurants,searchTerm,setSearchTer
     );
     setFilteredRestaurants(filteredList);
   };
+  const handleOptionChange = (e) => {
+    const filterValue = e.target.value;
+    switch (filterValue) {
+      case "rating": {
+        const data = [...restaurants];
+        const result = data.sort(
+          (item1, item2) => item2?.info?.avgRating - item1?.info?.avgRating
+        );
+        setFilteredRestaurants(result);
+        break;
+      }
+      case "time": {
+        const data = [...restaurants];
+        const result = data.sort(
+          (item1, item2) =>
+            item1?.info?.sla?.deliveryTime - item2?.info?.sla?.deliveryTime
+        );
+        setFilteredRestaurants(result);
+        break;
+      }
+      case "price": {
+        const data = [...restaurants];
+        const result = data.sort(
+          (item1, item2) =>
+            parseInt(item1?.info?.costForTwo.match(/\d+/)[0], 10) -
+            parseInt(item2?.info?.costForTwo.match(/\d+/)[0], 10)
+        );
+        setFilteredRestaurants(result);
+        break;
+      }
+
+      default:
+        break;
+    }
+  };
   return (
-    <div>
+    <div className="flex justify-between p-5">
       <input
         type="text"
         placeholder="Search"
@@ -17,6 +57,20 @@ const ResFilter = ({ restaurants, setFilteredRestaurants,searchTerm,setSearchTer
         value={searchTerm}
         onChange={handleChange}
       />
+      <div>
+        <label className="p-1">Sort by</label>
+        <select
+          onChange={handleOptionChange}
+          className="border-2 cursor-pointer"
+        >
+          <option disabled selected value>
+            -- select an option --
+          </option>
+          <option value="rating">Rating</option>
+          <option value="time">Delivery Time</option>
+          <option value="price">Price</option>
+        </select>
+      </div>
     </div>
   );
 };

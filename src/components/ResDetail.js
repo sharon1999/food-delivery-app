@@ -1,5 +1,4 @@
-import ShimmerUI from "./ShimmerUI/ShimmerUI";
-// import "./ResDetail.css";
+import ShimmerUI from "./ShimmerUI";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import ResCategory from "./ResCategory";
@@ -11,7 +10,7 @@ const ResDetail = () => {
   const { resInfo, foodInfo } = useRestaurantMenu(id);
   if (resInfo === null)
     return (
-      <div className="shimmerui">
+      <div className="flex flex-wrap gap-5 mx-[10%]">
         <ShimmerUI />
       </div>
     );
