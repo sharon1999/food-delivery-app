@@ -12,7 +12,10 @@ const Cart = () => {
   const handleClick = (food) => {
     dispatch(clearCart());
   };
-
+  const total = cart.reduce((acc, curr) => {
+    return acc + (curr.quantity * curr.price) / 100;
+  }, 0);
+  console.log("Tot", total);
   return (
     <div className="w-6/12 mx-auto h-[75vh] my-4 overflow-hidden">
       {cart.length === 0 ? (
@@ -37,11 +40,15 @@ const Cart = () => {
               <p className="text-xl">{food?.name}</p>
               <p className="text-xl">₹ {food?.price / 100}</p>
             </div>
-            <img
-              src={IMG_URL + food?.imageId}
-              alt={food?.name}
-              className="w-28 h-auto"
-            />
+
+            {food?.imageId !== undefined && (
+              <img
+                src={IMG_URL + food?.imageId}
+                alt={food?.name}
+                className="w-28 h-auto"
+              />
+            )}
+
             {food.quantity && (
               <div
                 className="bg-white hover:bg-slate-50 text-green-500 shadow-md hover:shadow-xl  rounded-lg  p-1
@@ -65,6 +72,15 @@ const Cart = () => {
           </div>
         );
       })}
+      <div className="flex justify-center p-10 bg-slate-600">
+        <h1 className="text-3xl text-white flex-1">Total</h1>
+        <div
+          className="bg-slate-600 text-white  text-4xl"
+          onClick={handleClick}
+        >
+          ₹ {total}
+        </div>
+      </div>
     </div>
   );
 };

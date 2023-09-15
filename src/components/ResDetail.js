@@ -2,11 +2,15 @@ import ShimmerUI from "./ShimmerUI";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import ResCategory from "./ResCategory";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ResDetail = () => {
   const [showIndex, setShowIndex] = useState(0);
   const { id } = useParams();
+  useEffect(() => {
+    // Scroll to the top of the component when it loads
+    window.scrollTo(0, 0);
+  }, []);
   const { resInfo, foodInfo } = useRestaurantMenu(id);
   if (resInfo === null)
     return (

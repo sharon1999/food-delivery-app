@@ -62,8 +62,9 @@ const ResFilter = ({
         <select
           onChange={handleOptionChange}
           className="border-2 cursor-pointer"
+          defaultValue="default"
         >
-          <option disabled selected value>
+          <option disabled value="default">
             -- select an option --
           </option>
           <option value="rating">Rating</option>
